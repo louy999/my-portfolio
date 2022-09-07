@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+
+    <link rel="stylesheet" href="./style/style.css" />
+    <!-- css style sheet -->
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <!--  bootstrap files -->
+    <link rel="stylesheet" href="./node_modules/normalize.css/normalize.css" />
+    <!-- normalize css -->
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md position-fixed shadow-sm p-3  bg-body rounded">
+      <div class="container">
+        <a class="navbar-brand" href="#">louy</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#main"
+          aria-controls="main"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="main">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link p-lg-3 active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-lg-3"  href="#about">about</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-lg-3" href="#project">my project</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-lg-3" href="#skills">skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-lg-3" href="#contact">contact</a>
+            </li>
+          </ul>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div class="container-circle">
+        <div class="circle">
+            <div class="logo"></div>
+            <div class="text">
+                <p></p>
+            </div>
+        </div>
+        <div class="cv">
+            <input type="button" value="My CV">
+            <i class="fa-solid fa-circle-down"></i>
+        </div>
+     <div class="icon">
+           <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-github"></i>
+        <i class="fa-brands fa-linkedin"></i>
+     </div>
+    </div>
+    <div id="about" class="about ">
+        <h1>about</h1>
+        <div class="con-about">
+            <img src="./img/mohammad-rahmani-N5bT5RctFZ8-unsplash.jpg" alt=""/>
+<div class="para">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus culpa obcaecati vel! Libero eveniet, magni quasi inventore laudantium hic porro quae repellat deleniti delectus tempore exercitationem eaque eos, earum quia debitis? Eligendi debitis facilis illum commodi. Tempore nam ea labore. Beatae, delectus error distinctio assumenda neque facere quisquam repellendus cumque?</div>
+        </div>
+    </div>
+    <div id="project" class="project container">
+        <h1>project</h1>
+        <div class="con-project">
+        <div class="project-num shadow p-3 mb-5 bg-body rounded">
+          <img src="./img/108115979.jpeg" alt="">
+          <h3>boolmarker</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quo eligendi distinctio, voluptate dolores, ullam accusantium nulla sapiente possimus, quos doloremque vero iure numquam placeat sunt assumenda reiciendis nostrum! Aliquid?</p>
+          <button type="button" class="btn btn-primary"><a  href="https://louy999.github.io/${
+          repo.name
+        }" target="_blank" >view</a><i class="fa-solid fa-circle-arrow-right"></i></button>
+        </div>
+        </div>
+        <div class="control">
+          <span><i class="fa-solid fa-angles-right" style="transform: rotateZ(180deg);"></i>prev</span>
+          <span>pause <i class="fa-solid fa-pause"></i></span>
+          <span>next<i class="fa-solid fa-angles-right"></i></span>
+        </div>
+    </div>
+    <div class="container" id="skills">
+      <h1>skills</h1>
+      <div class="container">
+        <img src="./img/tim-mossholder-WE_Kv_ZB1l0-unsplash.jpg" alt="">
+        <div class="skill">
+                <!-- <i class="fa-brands fa-html5"></i>html
+                css
+                sass
+                javascript
+                typescript
+                git/gitFlow</td>
+                 unit Test (jest)
+                bootstrap
+                gulp js -->
+        </div>
+      </div>
+    </div>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- javascript file for bootstrap -->
+    <script
+      src="https://kit.fontawesome.com/4d905c5a1a.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- font awesome file -->
+    <script src="./js/circle.js"></script>
+    <script src="./js/project.js" type="module"></script>
+    <script src="./js/nav.js" type="module"></script>
+
+  </body>
+</html>
+

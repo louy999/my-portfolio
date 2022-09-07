@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@700&display=swap");
+nav.navbar {
+  width: 100vw;
+  margin-bottom: 50px;
+  z-index: 6549646984685;
+  transition: 0.3s;
+}
+.container {
+  //   min-height: 70px;
+  .navbar-brand {
+    font-family: "Qwitcher Grypen", cursive;
+    font-size: 40px !important;
+    font-weight: 700;
+    padding: 0;
+    text-transform: capitalize;
+  }
+  .navbar-toggler {
+    border: none;
+    outline: none;
+    &:focus {
+      box-shadow: none;
+    }
+  }
+  .nav-link {
+    text-transform: capitalize;
+    &:hover {
+      font-size: 20px;
+    }
+  }
+}

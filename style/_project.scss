@@ -1,0 +1,22 @@
+#project {
+  position: relative;
+  z-index: 5494653;
+  top: 70vh;
+  h1 {
+    color: black;
+  }
+
+  .control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    span {
+      cursor: pointer;
+      i {
+        margin: 0 5px;
+      }
+    }
+  }
+}

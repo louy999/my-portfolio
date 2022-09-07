@@ -1,0 +1,26 @@
+.about {
+  position: relative;
+  top: 60vh;
+  background-color: black;
+  padding: 20px 50px;
+
+  .con-about {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    img {
+      width: 35vw;
+      border-radius: 10px;
+    }
+    .para {
+      padding: 20px;
+    }
+  }
+}
+@media (max-width: 700px) {
+  .con-about {
+    img {
+      display: none;
+    }
+  }
+}
