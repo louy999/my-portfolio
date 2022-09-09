@@ -34,30 +34,27 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-function getRepo() {
-    return __awaiter(this, void 0, void 0, function () {
-        var res, data;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, fetch("https://api.github.com/users/louy999/repos")];
-                case 1:
-                    res = _a.sent();
-                    return [4 /*yield*/, res.json()];
-                case 2:
-                    data = _a.sent();
-                    data.forEach(function (repo) {
-                        for (var i = 0; i < myFullProject.length; i++) {
-                            if (repo.name === myFullProject[i]) {
-                                projectCard.innerHTML += "\n        <div class=\"project-num shadow p-3 mb-5 bg-body rounded\">\n                <img src=\"https://raw.githubusercontent.com/louy999/".concat(repo.name, "/master/design/desktop-design.jpg\" alt=\"\">\n                <h3>").concat(repo.name.split("-").join(" "), "</h3>\n                <p class=\"about-project\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis blanditiis at eum, saepe culpa quod ullam molestias a voluptatibus esse.</p>\n<button type=\"button\" class=\"btn btn-primary\"><a  href=\"https://louy999.github.io/").concat(repo.name, "\" target=\"_blank\" >view</a><i class=\"fa-solid fa-circle-arrow-right\"></i></button>\n        </div>");
-                            }
-                        }
-                    });
-                    return [2 /*return*/];
-            }
-        });
+var _this = this;
+var getRepo = function () { return __awaiter(_this, void 0, void 0, function () {
+    var res, data;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0: return [4 /*yield*/, fetch("https://api.github.com/users/louy999/repos")];
+            case 1:
+                res = _a.sent();
+                return [4 /*yield*/, res.json()];
+            case 2:
+                data = _a.sent();
+                data.forEach(function (repo) {
+                    if (repo.name === myFullProject[count]) {
+                        projectCard.innerHTML = "\n        <div class=\"project-num shadow p-3 mb-5 bg-body rounded\">\n                <img src=\"https://raw.githubusercontent.com/louy999/".concat(repo.name, "/master/design/desktop-design.jpg\" alt=\"\">\n                <h3>").concat(repo.name.split("-").join(" "), "</h3>\n                <p class=\"about-project\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis blanditiis at eum, saepe culpa quod ullam molestias a voluptatibus esse.</p>\n<button type=\"button\"  class=\"btn btn-primary\"><a  href=\"https://louy999.github.io/").concat(repo.name, "\" target=\"_blank\" >view more </a><i class=\"fa-solid fa-circle-arrow-right\"></i></button>\n        </div>");
+                    }
+                });
+                return [2 /*return*/];
+        }
     });
-}
-// getRepo();
+}); };
+getRepo();
 var myFullProject = [
     "bookmark-landing-page-master",
     "cruds",
@@ -68,9 +65,47 @@ var myFullProject = [
     "rock-paper-scissors-master",
     "todo-app-main",
 ];
+var options = {
+    root: null,
+    threshold: 0.7
+};
 var projectCard = document.querySelector(".con-project");
-window.addEventListener("scroll", function () {
-    if (window.scrollY >= 1222) {
-        projectCard.style.top = "0";
-    }
+var observers = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+        entry.target.style.top = "0";
+    });
+}, options);
+observers.observe(projectCard);
+var nextBTN = document.querySelector(".control .next");
+var pauseBTN = document.querySelector(".control .pause");
+var prevBTN = document.querySelector(".control .prev");
+pauseBTN.addEventListener("click", function () {
+    clearInterval(setTimeProject);
 });
+var count = 0;
+nextBTN.addEventListener("click", function () {
+    algo();
+    getRepo();
+});
+prevBTN.addEventListener("click", function () {
+    algo();
+    getRepo();
+    count = count - 2;
+});
+function algo() {
+    if (count === myFullProject.length - 1) {
+        count = 0;
+    }
+    else if (count >= 0) {
+        count++;
+    }
+    else if (count < 0) {
+        count = myFullProject.length;
+    }
+}
+var setTimeProject = setInterval(set, 5000);
+function set() {
+    count++;
+    algo();
+    getRepo();
+}

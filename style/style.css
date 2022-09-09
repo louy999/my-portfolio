@@ -24,6 +24,9 @@ nav.navbar {
 .container .nav-link {
   text-transform: capitalize;
 }
+.container .nav-link.active {
+  font-size: 20px;
+}
 .container .nav-link:hover {
   font-size: 20px;
 }
@@ -43,7 +46,7 @@ h1 {
 }
 
 .container-circle {
-  height: 50vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,7 +54,7 @@ h1 {
 .container-circle .circle {
   position: relative;
   width: 200px;
-  top: 70px;
+  bottom: 100px;
   z-index: 854964658655;
   height: 200px;
   border-radius: 50%;
@@ -159,22 +162,22 @@ h1 {
     z-index: 0;
   }
 }
-.about {
+#about {
   position: relative;
-  top: 60vh;
   background-color: black;
   padding: 20px 50px;
+  margin-top: 50px;
 }
-.about .con-about {
+#about .con-about {
   display: flex;
   justify-content: space-between;
   color: white;
 }
-.about .con-about img {
+#about .con-about img {
   width: 35vw;
   border-radius: 10px;
 }
-.about .con-about .para {
+#about .con-about .para {
   padding: 20px;
 }
 
@@ -186,10 +189,50 @@ h1 {
 #project {
   position: relative;
   z-index: 5494653;
-  top: 70vh;
+  overflow-x: hidden;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 #project h1 {
   color: black;
+  width: 100%;
+}
+#project .con-project {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  position: relative;
+  top: 100px;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.5s;
+}
+#project .con-project .project-num {
+  transition: 0.5s;
+  width: 60vw;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 20px;
+}
+#project .con-project .project-num img {
+  width: 70%;
+  height: 35vh;
+  border-radius: 15px;
+}
+#project .con-project .project-num h3 {
+  width: 100%;
+  text-align: center;
+}
+#project .con-project .project-num p {
+  text-align: center;
+}
+#project .con-project .project-num a {
+  color: white;
+  text-decoration: none;
 }
 #project .control {
   display: flex;
@@ -201,15 +244,63 @@ h1 {
 #project .control span {
   cursor: pointer;
 }
+#project .control span:hover i.next {
+  -webkit-animation: next 0.5s linear infinite;
+          animation: next 0.5s linear infinite;
+}
+#project .control span:hover i.prev {
+  -webkit-animation: prev 0.5s linear infinite;
+          animation: prev 0.5s linear infinite;
+}
 #project .control span i {
   margin: 0 5px;
 }
 
+@-webkit-keyframes next {
+  0% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes next {
+  0% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}
+@-webkit-keyframes prev {
+  0% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(-10px);
+  }
+}
+@keyframes prev {
+  0% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(-10px);
+  }
+}
+@media (max-width: 500px) {
+  .project-num {
+    width: 100vw !important;
+  }
+  .project-num img {
+    width: 60%;
+  }
+}
 #skills {
   position: relative;
-  top: 80vh;
-  height: 50vh;
   width: 70%;
+  margin-top: 50px;
 }
 #skills h1 {
   color: black;
@@ -222,19 +313,205 @@ h1 {
 }
 #skills .container .skill {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
 }
-#skills .container .skill table {
-  border-radius: 10px;
-  width: 90%;
-  margin: 0 auto;
+#skills .container .skill .our-skill {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  align-items: center;
 }
-#skills .container .skill table td {
-  border: 1px solid black;
-  border-collapse: collapse;
-  padding: 10px;
+#skills .container .skill .our-skill:hover::before {
+  content: "";
+  position: absolute;
+  height: 20%;
+  background-color: red;
+  width: 300%;
+  -webkit-animation: skill 4s linear infinite;
+          animation: skill 4s linear infinite;
 }
-#skills .container .skill table td i {
-  font-size: 10px;
+#skills .container .skill .our-skill:hover::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  background-color: white;
+  bottom: 10px;
+}
+#skills .container .skill .our-skill span {
+  cursor: pointer;
+  z-index: 10;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 15px;
+  transition: 0.3s;
+  text-transform: uppercase;
+}
+#skills .container .skill .our-skill span:hover {
+  transform: rotateY(360deg);
+}
+#skills .container .skill .our-skill span img {
+  width: 40%;
+  height: 2.5em;
+  filter: grayscale(100%);
+}
+#skills .container .skill .our-skill span i {
+  width: 100%;
+  font-size: 50px;
+  text-align: center;
+}
+#skills .container .skill .our-skill span i.done {
+  font-size: 15px;
+  text-align: end;
+}
+#skills .container .skill .our-skill span i.end {
+  font-size: 15px;
+  text-align: end;
+}
+
+@media (max-width: 500px) {
+  #skills .container > img {
+    display: none;
+  }
+}
+@-webkit-keyframes skill {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes skill {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#contact {
+  position: relative;
+  margin-top: 50px;
+}
+#contact h1 {
+  color: black;
+}
+#contact .container {
+  background-color: #fff;
+  padding: 20px 40px 10px 40px;
+}
+#contact .container form {
+  padding: 30px 0 0 0;
+}
+#contact .container form input,
+#contact .container form textarea {
+  border: none;
+  outline: none;
+}
+#contact .container form img {
+  width: 100%;
+  height: 50vh;
+}
+#contact .container form .form-row {
+  display: flex;
+  margin: 32px 0;
+}
+#contact .container form .form-row .input-data {
+  width: 100%;
+  height: 40px;
+  margin: 0 20px;
+  position: relative;
+}
+#contact .container form .form-row .input-data label {
+  width: 100%;
+  position: relative;
+  bottom: 40px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+#contact .container form .form-row .input-data .underline {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+}
+#contact .container form .form-row .input-data .underline::before {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: red;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+#contact .container form .form-row .textarea {
+  height: 65px;
+}
+#contact .container form .form-row .textarea label {
+  bottom: 70px;
+}
+#contact .container form .form-row .textarea textarea {
+  resize: none;
+  padding-top: 10px;
+}
+#contact .container form .form-row .input-data input,
+#contact .container form .form-row .textarea textarea {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  font-size: 17px;
+  border-bottom: 2px solid black;
+}
+#contact .container form .form-row .input-data input:focus ~ label,
+#contact .container form .form-row .textarea textarea:focus ~ label,
+#contact .container form .form-row .input-data input:valid ~ label,
+#contact .container form .form-row .textarea textarea:valid ~ label {
+  transform: translateY(-20px);
+  font-size: 13px;
+}
+#contact .container form .form-row .textarea textarea:valid ~ label {
+  transform: translateY(-30px);
+  font-size: 13px;
+}
+#contact .container form .input-data input:focus ~ .underline:before,
+#contact .container form .input-data input:valid ~ .underline:before,
+#contact .container form .textarea textarea:focus ~ .underline:before,
+#contact .container form .textarea textarea:valid ~ .underline:before {
+  transform: scale(1);
+}
+
+@media (max-width: 400px) {
+  .container form img {
+    width: 100vw;
+    position: absolute;
+    left: 0;
+  }
+  .container form .form-row {
+    position: relative;
+    top: 50vh;
+    font-size: 13px;
+  }
+  .container form .form-row .input-data input:focus ~ label,
+.container form .form-row .textarea textarea:focus ~ label,
+.container form .form-row .input-data input:valid ~ label,
+.container form .form-row .textarea textarea:valid ~ label {
+    transform: translateY(-5px);
+    font-size: 10px;
+  }
+  .container form .form-row input[type=submit] {
+    position: relative;
+    bottom: 50vh;
+  }
 }/*# sourceMappingURL=style.css.map */

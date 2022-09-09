@@ -1,8 +1,8 @@
 #skills {
   position: relative;
-  top: 80vh;
-  height: 50vh;
   width: 70%;
+  margin-top: 50px;
+
   h1 {
     color: black;
   }
@@ -15,21 +15,84 @@
     }
     .skill {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
+      align-items: center;
       flex-wrap: wrap;
-      table {
-        border-radius: 10px;
-        width: 90%;
-        margin: 0 auto;
-        td {
-          border: 1px solid black;
-          border-collapse: collapse;
-          padding: 10px;
+      .our-skill {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+        align-items: center;
+        &:hover {
+          &::before {
+            content: "";
+            position: absolute;
+            height: 20%;
+            background-color: red;
+            width: 300%;
+            animation: skill 4s linear infinite;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            inset: 3px;
+            background-color: white;
+            bottom: 10px;
+          }
+        }
+        span {
+          cursor: pointer;
+          z-index: 10;
+          width: fit-content;
+          height: fit-content;
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          margin: 0 15px;
+          transition: 0.3s;
+          text-transform: uppercase;
+
+          &:hover {
+            transform: rotateY(360deg);
+          }
+
+          img {
+            width: 40%;
+            height: 2.5em;
+            filter: grayscale(100%);
+          }
           i {
-            font-size: 10px;
+            width: 100%;
+            font-size: 50px;
+            text-align: center;
+            &.done {
+              font-size: 15px;
+              text-align: end;
+            }
+            &.end {
+              font-size: 15px;
+              text-align: end;
+            }
           }
         }
       }
     }
+  }
+}
+@media (max-width: 500px) {
+  #skills .container {
+    > img {
+      display: none;
+    }
+  }
+}
+
+@keyframes skill {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

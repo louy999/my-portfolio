@@ -1,9 +1,48 @@
 #project {
   position: relative;
   z-index: 5494653;
-  top: 70vh;
+  overflow-x: hidden;
+  margin-top: 50px;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   h1 {
     color: black;
+    width: 100%;
+  }
+  .con-project {
+    width: fit-content;
+    display: flex;
+    position: relative;
+    top: 100px;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+    .project-num {
+      transition: 0.5s;
+      width: 60vw;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0 20px;
+      img {
+        width: 70%;
+        height: 35vh;
+        border-radius: 15px;
+      }
+      h3 {
+        width: 100%;
+        text-align: center;
+      }
+      p {
+        text-align: center;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
   }
 
   .control {
@@ -14,9 +53,42 @@
     padding: 10px;
     span {
       cursor: pointer;
+      &:hover i.next {
+        animation: next 0.5s linear infinite;
+      }
+      &:hover i.prev {
+        animation: prev 0.5s linear infinite;
+      }
+
       i {
         margin: 0 5px;
       }
+    }
+  }
+}
+@keyframes next {
+  0% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}
+@keyframes prev {
+  0% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(-10px);
+  }
+}
+
+@media (max-width: 500px) {
+  .project-num {
+    width: 100vw !important;
+
+    img {
+      width: 60%;
     }
   }
 }

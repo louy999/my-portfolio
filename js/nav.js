@@ -22,7 +22,7 @@ function hideNavWhen() {
             timer = setTimeout(function () {
                 nav.style.transform = "translateY(-100px)";
                 //   when not scroll
-            }, 2000);
+            }, 4000);
         }
     });
 }
@@ -34,4 +34,24 @@ window.addEventListener("mousemove", function (e) {
     else {
         hideNavWhen();
     }
+});
+var allProduct = document.querySelectorAll("body >div");
+console.log(allProduct);
+var options = {
+    root: null,
+    threshold: 0.7
+};
+var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+        var _a;
+        linkNav.forEach(function (li) {
+            li.classList.remove("active");
+        });
+        (_a = document.querySelector(".".concat(entry.target.id))) === null || _a === void 0 ? void 0 : _a.classList.add("active");
+    });
+}, options);
+window.addEventListener("scroll", function () {
+    allProduct.forEach(function (Product) {
+        observer.observe(Product);
+    });
 });

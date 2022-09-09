@@ -1,0 +1,120 @@
+#contact {
+  position: relative;
+  margin-top: 50px;
+  h1 {
+    color: black;
+  }
+  .container {
+    background-color: #fff;
+    padding: 20px 40px 10px 40px;
+    // box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    form {
+      padding: 30px 0 0 0;
+      input,
+      textarea {
+        border: none;
+        outline: none;
+      }
+      img {
+        width: 100%;
+        height: 50vh;
+      }
+      .form-row {
+        display: flex;
+        margin: 32px 0;
+        .input-data {
+          width: 100%;
+          height: 40px;
+          margin: 0 20px;
+          position: relative;
+          label {
+            width: 100%;
+            position: relative;
+            bottom: 40px;
+            background-color: #fff;
+            transition: all 0.3s ease;
+          }
+          .underline {
+            position: absolute;
+            bottom: 0;
+            height: 2px;
+            width: 100%;
+            &::before {
+              position: absolute;
+              content: "";
+              height: 2px;
+              width: 100%;
+              background: red;
+              transform: scaleX(0);
+              transform-origin: center;
+              transition: transform 0.3s ease;
+            }
+          }
+        }
+        .textarea {
+          height: 65px;
+          label {
+            bottom: 70px;
+          }
+          textarea {
+            resize: none;
+            padding-top: 10px;
+          }
+        }
+        .input-data input,
+        .textarea textarea {
+          display: block;
+          width: 100%;
+          height: 100%;
+          border: none;
+          font-size: 17px;
+          border-bottom: 2px solid black;
+        }
+        .input-data input:focus ~ label,
+        .textarea textarea:focus ~ label,
+        .input-data input:valid ~ label,
+        .textarea textarea:valid ~ label {
+          transform: translateY(-20px);
+          font-size: 13px;
+        }
+        .textarea textarea:valid ~ label {
+          transform: translateY(-30px);
+          font-size: 13px;
+        }
+      }
+      .input-data input:focus ~ .underline:before,
+      .input-data input:valid ~ .underline:before,
+      .textarea textarea:focus ~ .underline:before,
+      .textarea textarea:valid ~ .underline:before {
+        transform: scale(1);
+      }
+    }
+  }
+}
+@media (max-width: 400px) {
+  .container {
+    form {
+      img {
+        width: 100vw;
+        position: absolute;
+        left: 0;
+      }
+      .form-row {
+        position: relative;
+        top: 50vh;
+        font-size: 13px;
+        .input-data input:focus ~ label,
+        .textarea textarea:focus ~ label,
+        .input-data input:valid ~ label,
+        .textarea textarea:valid ~ label {
+          transform: translateY(-5px);
+          font-size: 10px;
+        }
+        input[type="submit"] {
+          position: relative;
+          bottom: 50vh;
+        }
+      }
+    }
+  }
+}

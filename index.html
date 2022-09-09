@@ -29,31 +29,31 @@
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <i class="fa-solid fa-bars"></i>
+          <i class="fa-solid fa-bars "></i>
         </button>
         <div class="collapse navbar-collapse" id="main">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link p-lg-3 active" aria-current="page" href="#">Home</a>
+              <a class="nav-link p-lg-3 home active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link p-lg-3"  href="#about">about</a>
+              <a class="nav-link p-lg-3 about"  href="#about">about</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link p-lg-3" href="#project">my project</a>
+              <a class="nav-link p-lg-3 project" href="#project">my project</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link p-lg-3" href="#skills">skills</a>
+              <a class="nav-link p-lg-3 skills" href="#skills">skills</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link p-lg-3" href="#contact">contact</a>
+              <a class="nav-link p-lg-3 contact" href="#contact">contact</a>
             </li>
           </ul>
           </form>
         </div>
       </div>
     </nav>
-    <div class="container-circle">
+    <div id="home" class="container-circle">
         <div class="circle">
             <div class="logo"></div>
             <div class="text">
@@ -81,19 +81,12 @@
     <div id="project" class="project container">
         <h1>project</h1>
         <div class="con-project">
-        <div class="project-num shadow p-3 mb-5 bg-body rounded">
-          <img src="./img/108115979.jpeg" alt="">
-          <h3>boolmarker</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quo eligendi distinctio, voluptate dolores, ullam accusantium nulla sapiente possimus, quos doloremque vero iure numquam placeat sunt assumenda reiciendis nostrum! Aliquid?</p>
-          <button type="button" class="btn btn-primary"><a  href="https://louy999.github.io/${
-          repo.name
-        }" target="_blank" >view</a><i class="fa-solid fa-circle-arrow-right"></i></button>
-        </div>
+      
         </div>
         <div class="control">
-          <span><i class="fa-solid fa-angles-right" style="transform: rotateZ(180deg);"></i>prev</span>
-          <span>pause <i class="fa-solid fa-pause"></i></span>
-          <span>next<i class="fa-solid fa-angles-right"></i></span>
+          <span class="prev"><i class="fa-solid fa-angles-left prev"></i>prev</span>
+          <span class="pause">pause <i class="fa-solid fa-pause"></i></span>
+          <span class="next">next<i class="fa-solid fa-angles-right next"></i></span>
         </div>
     </div>
     <div class="container" id="skills">
@@ -101,18 +94,25 @@
       <div class="container">
         <img src="./img/tim-mossholder-WE_Kv_ZB1l0-unsplash.jpg" alt="">
         <div class="skill">
-                <!-- <i class="fa-brands fa-html5"></i>html
-                css
-                sass
-                javascript
-                typescript
-                git/gitFlow</td>
-                 unit Test (jest)
-                bootstrap
-                gulp js -->
+               <div class="our-skill"><span class="shadow-lg p-3 mb-5 bg-body rounded"><i class="fa-brands fa-html5"></i> html<i class="fa-solid fa-check-double done"></i></span></div>
+               <div class="our-skill"><span class="shadow-lg p-3 mb-5 bg-body rounded"><i class="fa-brands fa-css3-alt"></i>css<i class="fa-solid fa-check-double done"></i></span> </div>
+               <div class="our-skill"><span class="shadow-lg p-3 mb-5 bg-body rounded"><i class="fa-brands fa-sass"></i>sass<i class="fa-solid fa-check-double done"></i></span> </div>
+               <div class="our-skill"><span class="shadow-lg p-3 mb-5 bg-body rounded"><i class="fa-brands fa-square-js"></i>javascript<i class="fa-solid fa-check-double done"></i></span> </div>
+               <div class="our-skill"><span class="shadow-lg p-3 mb-5 bg-body rounded"><img src="./img/icons8-typescript-48.png" alt=""> typescript<i class="fa-solid fa-check-double done"></i></span> </div>
+               <div class="our-skill"><span class="shadow-lg p-3 mb-5 bg-body rounded"><i class="fa-brands fa-git-alt"></i>git/gitFlow<i class="fa-solid fa-check-double done"></i></span></div>
+               <div class="our-skill"><span class="shadow-lg p-3 mb-5 bg-body rounded"> <img src="./img/jest-logo.png" alt=""> unit Test (jest)<i class="fa-solid fa-check-double done"></i></span>  </div>
+               <div class="our-skill"><span class="shadow-lg p-3 mb-5 bg-body rounded"><i class="fa-brands fa-bootstrap"></i>bootstrap<i class="fa-solid fa-check-double done"></i></span> </div>
+               <div class="our-skill"><span class="shadow-lg p-3 mb-5 bg-body rounded"><i class="fa-brands fa-gulp"></i>gulp js<i class="fa-solid fa-check-double done"></i></span> </div>
+               <div class="our-skill"><span class="shadow-lg p-3 mb-5 bg-body rounded"><i class="fa-brands fa-react"></i>react js<i class="fa-solid fa-hourglass-end end"></i></span> </div>
+               <div class="our-skill"><span class="shadow-lg p-3 mb-5 bg-body rounded"><i class="fa-brands fa-node-js"></i>node js<i class="fa-solid fa-hourglass-end end"></i></span> </div>
+               <div class="our-skill"><span class="shadow-lg p-3 mb-5 bg-body rounded"><i class="fa-brands fa-php"></i>PHP<i class="fa-solid fa-hourglass-end end"></i></span> </div>
+               <div class="our-skill"><span class="shadow-lg p-3 mb-5 bg-body rounded"> <img style="width: 50%;" src="./img//icons8-mysql-logo-24.png" alt=""> mySql<i class="fa-solid fa-hourglass-end end"></i></span> </div>
         </div>
+        <!-- <i class="fa-solid fa-check-double"></i> -->
+        <!-- <i class="fa-solid fa-hourglass-end"></i> -->
       </div>
     </div>
+    
     <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- javascript file for bootstrap -->
     <script
@@ -127,3 +127,4 @@
   </body>
 </html>
 
+<!-- -->

@@ -23,6 +23,9 @@ nav.navbar {
   }
   .nav-link {
     text-transform: capitalize;
+    &.active {
+      font-size: 20px;
+    }
     &:hover {
       font-size: 20px;
     }

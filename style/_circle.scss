@@ -1,12 +1,12 @@
 .container-circle {
-  height: 50vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   .circle {
     position: relative;
     width: 200px;
-    top: 70px;
+    bottom: 100px;
     z-index: 854964658655;
     height: 200px;
     border-radius: 50%;
