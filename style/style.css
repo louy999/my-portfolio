@@ -328,7 +328,7 @@ h1 {
   content: "";
   position: absolute;
   height: 20%;
-  background-color: red;
+  background-color: blue;
   width: 300%;
   -webkit-animation: skill 4s linear infinite;
           animation: skill 4s linear infinite;
